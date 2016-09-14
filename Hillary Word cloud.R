@@ -44,7 +44,7 @@ Hillary_clean <- tm_map(Hillary_corpus, removeNumbers)
 # Remove all the white space
 Hillary_clean <- tm_map(Hillary_corpus, stripWhitespace)
 # Remove obvious words: 'president+Hillary+election'
-Hillary_clean <- tm_map(Hillary_clean, removeWords, c("president","President","hillary","election","Election","Hillary","Clinton","clinton"))
+Hillary_clean <- tm_map(Hillary_clean, removeWords, c("president","President","hillary","election","Election","Hillary","Clinton","clinton","The","the"))
 
 # Make and Scale the Word Cloud
 wordcloud(Hillary_clean, max.words = 100, random.order = F, col= rainbow(20), scale = c(6, .5))

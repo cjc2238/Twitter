@@ -47,7 +47,7 @@ trump_clean <- tm_map(trump_clean, removeNumbers)
 trump_clean <- tm_map(trump_clean, stripWhitespace)
 
 # Remove obvious words: 'president+trump+election'
-trump_clean <- tm_map(trump_clean, removeWords, c("president","President","trump","election","Election","Trump","Donald","donald"))
+trump_clean <- tm_map(trump_clean, removeWords, c("president","President","trump","election","Election","Trump","Donald","donald","The","the"))
 
 # This function makes the word cloud
 wordcloud(trump_clean)
