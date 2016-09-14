@@ -28,7 +28,7 @@ CleanHillarySupportersText <- gsub("(f|ht)tp(s?)://(.*)[.][a-z]+", "", HillarySu
 Hillary_unique <- unique(CleanHillarySupportersText)
 
 # Us TM pachage to convert collection of texts to a text corpus.
-Hillary_corpus <- Corpus(VectorSource(HillarySupporters_Text))
+Hillary_corpus <- Corpus(VectorSource(Hillary_unique))
 
 # Start Cleaning data
 # Create new clean value
