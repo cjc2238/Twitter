@@ -7,8 +7,7 @@ require(RCurl)
 require(twitteR)
 require(ROAuth)
 
-setup_twitter_oauth("GNPEgOwQ1wzj324bMCqBrHBgQ", "6IDQUQVLYPE0VCmsBrwQ1rGunEdexj7drvujpyhLidOzc3R7Nd", access_token= "775774019178168322-YKwYEHI8Y43W265WgmNJuayvTV7QNnZ", access_secret= "gUcDbFhitpPkTWuJAAS2MRTLmKrTZxdp6QLJ9kzNxEGb5")
-
+setup_twitter_oauth(Consumer_Key, Consumer_Secret, Access_Token, Access_Secret)
 
 # Convert list to vector
 HillarySupporters <- searchTwitteR('president+Hillary+election', n=5000, resultType ="weekly")
