@@ -1,6 +1,5 @@
 ### Learning Analytics Twitter Text Code Mining
 
-
 # Load required libraries
 require(wordcloud)
 require(tm)
