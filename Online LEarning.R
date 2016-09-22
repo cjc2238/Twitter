@@ -5,7 +5,8 @@ require(RCurl)
 require(twitteR)
 require(ROAuth)
 
-setup_twitter_oauth(Consumer_Key, Consumer_Secret, Access_Token, Access_Secret)
+# Run API Auth File
+source('~/GitHub/Searching Twitter Authentication.R')
 
 Online <- searchTwitteR('Online Learning', n=5000, resultType ="recent")
 
@@ -17,7 +18,13 @@ Online_unique <- unique(CleanOnlinetext)
 
 OnlineCorpus <- Corpus(VectorSource(Online_unique))
 
+# Clean Corpus
 Online_clean <- tm_map(OnlineCorpus, removePunctuation)
+
+# Remove old values
+remove(Access_Secret, Access_Token, CleanOnlinetext,Consumer_Key,Consumer_Secret,Online,Online_unique,OnlineCorpus,Onlinetext)
+
+
 Online_clean <- tm_map(Online_clean, content_transformer(tolower))
 Online_clean <- tm_map(Online_clean, removeWords, stopwords("english"))
 Online_clean <- tm_map(Online_clean, removeNumbers)
